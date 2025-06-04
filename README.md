@@ -30,7 +30,7 @@ Found that Windows was unable to load the user profile because the registry key 
 
 The ProfileImagePath value under the registry key:
 
-## HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+### HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
 
 was set to a folder name that didn’t match the real profile folder under C:\Users.
 
