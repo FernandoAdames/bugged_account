@@ -16,7 +16,7 @@ Pressed Win + R, typed eventvwr.msc, and hit Enter to launch Event Viewer.
 
 Went to Windows Logs → Application.
 
- ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/03_Filtering_Logs.pngl)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/3ed335e7eefd9df3709f8c8a7bb885d7af331ebc/03_Filtering_Logs.png)
 
 🔍 Filtered the Log
 
