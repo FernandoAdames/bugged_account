@@ -16,20 +16,20 @@ Pressed Win + R, typed eventvwr.msc, and hit Enter to launch Event Viewer.
 
 Went to Windows Logs → Application.
 
- ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/3ed335e7eefd9df3709f8c8a7bb885d7af331ebc/03_Filtering_Logs.png)
-
 🔍 Filtered the Log
 
 Clicked "Filter Current Log".
 
 Entered Event ID 1511, which is related to user profile load failures.
 
- ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/04_logs.png)
+![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/3ed335e7eefd9df3709f8c8a7bb885d7af331ebc/03_Filtering_Logs.png)
 
 🧠 Analyzed the Event Message
 
 I'n the general message you'll see a decription along the lines like says the following 
 " Windows cannot find the local profile and is logging you on with a temporary profile. Changes you make to this profile will be lost when you log off." 
+
+![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/04_logs.png)
 
 Found that the user profile couldn’t be loaded because the registry was pointing to a path that didn’t match the current user profile folder.
 
