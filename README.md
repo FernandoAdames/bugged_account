@@ -3,19 +3,27 @@ IT support scenario involving a corrupted Windows user profile, often encountere
 
 🧪 Steps I Took to Solve the Issue
 
+ ![Image Alt](image_url)
+
 🖥️ Opened Event Viewer
 
 Pressed Win + R, typed eventvwr.msc, and hit Enter to launch Event Viewer.
 
+ ![Image Alt](image_url)
+
 📂 Navigated to Logs
 
 Went to Windows Logs → Application.
+
+ ![Image Alt](image_url)
 
 🔍 Filtered the Log
 
 Clicked "Filter Current Log".
 
 Entered Event ID 1511, which is related to user profile load failures.
+
+ ![Image Alt](image_url)
 
 🧠 Analyzed the Event Message
 
@@ -25,6 +33,8 @@ I'n the general message you'll see a decription along the lines like says the fo
 Found that the user profile couldn’t be loaded because the registry was pointing to a path that didn’t match the current user profile folder.
 
 Found that Windows was unable to load the user profile because the registry key ProfileImagePath was pointing to a user folder that didn’t exist or had been renamed.
+
+ ![Image Alt](image_url)
 
 🛠️ Fixed the Registry and Folder Mismatch
 
@@ -38,10 +48,14 @@ Opened regedit and navigated to the appropriate SID under ProfileList.
 
 Located the broken profile and reviewed the ProfileImagePath value.
 
+ ![Image Alt](image_url)
+
 Opened File Explorer and browsed to C:\Users.
 
 Noticed that the actual user folder name was different from what the registry expected.
 
 Renamed the user folder to exactly match the ProfileImagePath value shown in the registry.
+
+ ![Image Alt](image_url)
 
 
