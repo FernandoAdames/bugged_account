@@ -1,21 +1,22 @@
 # bugged_account
 IT support scenario involving a corrupted Windows user profile, often encountered in help desk environments.I triggered a profile load failure by renaming the user’s profile folder, which caused Windows to log the user into a temporary profile.  The goal of the project was to diagnose and resolve the issue using tools such as Event Viewer.
 
-🧪 Steps I Took to Solve the Issue
+🧪 Steps I Took to Solve this Issue
 
- ![Image Alt](image_url)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/01_cant_sign_in.png)
+
 
 🖥️ Opened Event Viewer
 
 Pressed Win + R, typed eventvwr.msc, and hit Enter to launch Event Viewer.
 
- ![Image Alt](image_url)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/02_even_viewer_command.png)
 
 📂 Navigated to Logs
 
 Went to Windows Logs → Application.
 
- ![Image Alt](image_url)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/03_Filtering_Logs.pngl)
 
 🔍 Filtered the Log
 
@@ -23,7 +24,7 @@ Clicked "Filter Current Log".
 
 Entered Event ID 1511, which is related to user profile load failures.
 
- ![Image Alt](image_url)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/04_logs.png)
 
 🧠 Analyzed the Event Message
 
@@ -34,7 +35,7 @@ Found that the user profile couldn’t be loaded because the registry was pointi
 
 Found that Windows was unable to load the user profile because the registry key ProfileImagePath was pointing to a user folder that didn’t exist or had been renamed.
 
- ![Image Alt](image_url)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/05_regedit.png)
 
 🛠️ Fixed the Registry and Folder Mismatch
 
@@ -48,7 +49,7 @@ Opened regedit and navigated to the appropriate SID under ProfileList.
 
 Located the broken profile and reviewed the ProfileImagePath value.
 
- ![Image Alt](image_url)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/15604dea85fc71a53daad5c10282a699a013ea58/06_profile_image_path.png)
 
 Opened File Explorer and browsed to C:\Users.
 
@@ -56,6 +57,6 @@ Noticed that the actual user folder name was different from what the registry ex
 
 Renamed the user folder to exactly match the ProfileImagePath value shown in the registry.
 
- ![Image Alt](image_url)
+ ![Image Alt](https://github.com/FernandoAdames/bugged_account/blob/e9204d87d93e62cc77f0733bba0d3dc10a2daee3/07_user_path.png)
 
 
