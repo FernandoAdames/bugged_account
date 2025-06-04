@@ -24,17 +24,24 @@ I'n the general message you'll see a decription along the lines like says the fo
 
 Found that the user profile couldn’t be loaded because the registry was pointing to a path that didn’t match the current user profile folder.
 
+Found that Windows was unable to load the user profile because the registry key ProfileImagePath was pointing to a user folder that didn’t exist or had been renamed.
+
+🛠️ Fixed the Registry and Folder Mismatch
+
 The ProfileImagePath value under the registry key:
 
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+## HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+
 was set to a folder name that didn’t match the real profile folder under C:\Users.
 
-🛠️ Fixed the Registry Key
+Opened regedit and navigated to the appropriate SID under ProfileList.
 
-Pressed Win + R, typed regedit and opened it.
+Located the broken profile and reviewed the ProfileImagePath value.
 
-Navigated to the correct SID key under ProfileList.
+Opened File Explorer and browsed to C:\Users.
 
-Changed the ProfileImagePath to match the correct user folder under C:\Users.
+Noticed that the actual user folder name was different from what the registry expected.
+
+Renamed the user folder to exactly match the ProfileImagePath value shown in the registry.
 
 
